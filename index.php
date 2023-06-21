@@ -37,7 +37,7 @@ require "./cart.php"
                 
             </div>
             <div>
-                <?php print_r($items) ?>
+                <?php print_r($userCart->items) ?>
                 
             </div>
         </div>

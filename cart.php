@@ -2,7 +2,7 @@
 
 class Cart
 {
-    public $items = [];
+    public $items = [""];
     public $total = 0;
 
     public function __construct($items, $total)
@@ -14,5 +14,5 @@ class Cart
 }
 
 
-$userChart = new Cart (["prova"],0)
+$userCart = new Cart (["prova"],0)
 ?>

@@ -1,6 +1,6 @@
 <?php 
 
-require "./cart.php";
+
 
 class Toy extends Product{
 
@@ -16,7 +16,8 @@ class Toy extends Product{
     }
 
     public function addToChart($item){
-        $items[] = $item;
+        array_push($items, $item);
+        
     }
 
 
