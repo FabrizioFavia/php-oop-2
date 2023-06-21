@@ -1,6 +1,7 @@
  <?php
 
  require_once "./Models/toy.php";
+ require_once "./allProduct.php";
 
 class Cart
 {
@@ -14,14 +15,21 @@ class Cart
     }
     public function addToCart($item){
         $this->items[] = $item;
+        $this->total += $item->price;
     }
+
+    
 
 }
 
+ $userCart = new Cart ([],0);
 
-$userCart = new Cart ([],0);
-$userCart->addToCart($ball);
-$userCart->addToCart($puppy)
+ 
+ $userCart->addToCart($dogFood[0]);
+ $userCart->addToCart($catFood[2]);
+ $userCart->addToCart($toy[0]);
+
+ 
 ?>
 
 

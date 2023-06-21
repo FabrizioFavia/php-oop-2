@@ -16,4 +16,6 @@ public function __construct($name, $price, $quantity, $weight, $category, $image
 
 }
 
+
+
 ?>

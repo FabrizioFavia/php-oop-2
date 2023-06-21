@@ -1,0 +1,41 @@
+.productImage{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.productCard{
+    width: 300px;
+    min-height: 300px;
+    cursor: pointer;
+}
+.productCard:hover{
+    background-color: rgb(201, 222, 229);
+}
+
+.toyCard{
+    width: 300px;
+    height: 370px;
+    cursor: pointer;
+}
+.toyCard:hover{
+    background-color: rgb(201, 222, 229);
+}
+
+
+.imgContainer{
+    width: 100%;
+    height: 80%;
+}
+
+.cartProduct{
+    height: 70px;
+    width: 100%;
+    border: 1px solid rgb(170, 170, 170);
+}
+
+.cartImgContainer{
+    width: 20%;
+    height: 100%;
+}
