@@ -2,6 +2,7 @@
 
 require "./Models/product.php";
 require "./Models/toy.php";
+require "./cart.php"
 
 
 
@@ -33,6 +34,10 @@ require "./Models/toy.php";
             </div>
             <div>
                 <img src=<?php print_r($ball->image) ?> alt="">
+                
+            </div>
+            <div>
+                <?php print_r($items) ?>
                 
             </div>
         </div>
