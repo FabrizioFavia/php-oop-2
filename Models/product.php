@@ -9,7 +9,7 @@ class Product{
     use TypeOf;
 
     public $name;
-    public $price = 0;
+    private $price;
     public $quantity;
 
     public function __construct($name, $price, $quantity)
@@ -18,6 +18,20 @@ class Product{
         $this -> price = $price;
         $this -> quantity = $quantity;
     }
+
+    public function setPrice($price){
+        if ($price>=0) {
+            $this->price = $price;
+        }
+    }
+
+    public function getPrice(){
+        if($this->price<0){
+            throw new Exception("Il prezzo non può essere minore di 0");
+        }
+        return $this->price . " €";
+    }
+    
 }
 
 
