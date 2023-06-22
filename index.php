@@ -3,6 +3,8 @@
 require "./Models/product.php";
 require "./cart.php";
 require_once "./allProduct.php";
+require_once "./Traits/weightable.php";
+require_once "./Traits/typeOf.php"
 
 
 ?>
@@ -21,7 +23,7 @@ require_once "./allProduct.php";
     <title>E-commerce</title>
 </head>
 
-<body>
+<body class="bckgr">
     <header>
         <nav class="navbar navbar-expand-lg bg-success">
             <div class="container-lg">
@@ -59,16 +61,19 @@ require_once "./allProduct.php";
     <div class="container-lg d-flex my-3">
         <?php
         foreach ($dogFood as $product) { ?>
-            <div class="productCard border border-dark me-4 p-3">
+            <div class="productCard border border-dark me-4 p-2 ">
+                <div class="d-flex justify-content-between pt-2">
+                    <p><strong>Categoria: <?php echo $product->category ?></strong></p>
+                    <p><strong> <?php echo $product->getType() ?></strong></p>
+                </div>
                 <div class="imgContainer mb-3">
                     <img class="productImage" src=<?php echo $product->image ?> alt="">
                 </div>
                 <h4><?php echo $product->name ?></h4>
                 <div class="d-flex justify-content-between pt-2">
                     <p><strong>Prezzo: <?php echo $product->price ?> € </strong></p>
-                    <p><strong>Peso: <?php echo $product->weight ?></strong></p>
+                    <p><strong>Peso: <?php echo $product->getWeight() ?></strong></p>
                 </div>
-                <p><strong>Categoria: <?php echo $product->category ?></strong></p>
             </div>
         <?php } ?>
     </div>
@@ -81,47 +86,45 @@ require_once "./allProduct.php";
         <?php
         foreach ($catFood as $product) { ?>
             <div class="productCard border border-dark me-4 p-3">
+                <div class="d-flex justify-content-between pt-2">
+                    <p><strong>Categoria: <?php echo $product->category ?></strong></p>
+                    <p><strong> <?php echo $product->getType() ?></strong></p>
+                </div>
                 <div class="imgContainer mb-3">
                     <img class="productImage" src=<?php echo $product->image ?> alt="">
                 </div>
                 <h4><?php echo $product->name ?></h4>
                 <div class="d-flex justify-content-between">
                     <p><strong>Prezzo: <?php echo $product->price ?> € </strong></p>
-                    <p><strong>Peso: <?php echo $product->weight ?></strong></p>
+                    <p><strong>Peso: <?php echo $product->getWeight() ?></strong></p>
                 </div>
-                <p><strong>Categoria: <?php echo $product->category ?></strong></p>
             </div>
         <?php } ?>
     </div>
-
     <!-- TOYS -->
-
     <div class="sectionTitle container-lg my-5">
-        <h2>Cibo per gatti</h2>
+        <h2>Giochi</h2>
     </div>
     <div class="container-lg d-flex my-3">
         <?php
         foreach ($toy as $product) { ?>
-            <div class="toyCard border border-dark me-4 p-3">
+            <div class="productCard border border-dark me-4 p-3">
+                <div class="d-flex justify-content-between pt-2">
+                    <p><strong>Categoria: <?php echo $product->category ?></strong></p>
+                    <p><strong> <?php echo $product->getType() ?></strong></p>
+                </div>
                 <div class="imgContainer mb-3">
                     <img class="productImage" src=<?php echo $product->image ?> alt="">
                 </div>
                 <h4><?php echo $product->name ?></h4>
-                <div class="pb-2">
+                <div class="d-flex justify-content-between">
                     <p><strong>Prezzo: <?php echo $product->price ?> € </strong></p>
+                    <p><strong>Peso: <?php echo $product->getWeight() ?></strong></p>
                 </div>
-                <p><strong>Categoria: <?php echo $product->category ?></strong></p>
-
             </div>
         <?php } ?>
     </div>
-
-
     <!-- OFFCANVAS -->
-
-
-
-
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
             <h3 class="offcanvas-title" id="offcanvasRightLabel">Carrello</h3>
@@ -131,22 +134,17 @@ require_once "./allProduct.php";
             <?php
             foreach ($userCart->items as $product) { ?>
                 <div class="cartProduct mb-4 p-2 d-flex">
-                    <div class="cartImgContainer mb-3">
-                        <img class="productImage" src=<?php echo $product->image ?> alt="">
+                    <div class=" mb-3">
+                        <img class="cartProductImage" src=<?php echo $product->image ?> alt="">
                     </div>
                     <div class="d-flex flex-column">
                         <h5 class="ms-3"><?php echo $product->name ?></h5>
                         <div class="pb-2">
                             <p class="ms-3"><strong>Prezzo: <?php echo $product->price ?> € </strong></p>
                         </div>
-
                     </div>
-
-
                 </div>
-            <?php }
-
-            ?>
+            <?php } ?>
             <h4 class="mb-3">Totale: <?php echo $userCart->total ?> €</h4>
             <button onclick="purchase()" class="btn btn-success">Acquista</button>
         </div>
@@ -154,6 +152,7 @@ require_once "./allProduct.php";
 </body>
 
 </html>
+
 
 <script>
     function purchase() {
