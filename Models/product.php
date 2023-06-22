@@ -12,10 +12,9 @@ class Product{
     private $price;
     public $quantity;
 
-    public function __construct($name, $price, $quantity)
+    public function __construct($name, $quantity)
     {
         $this -> name = $name;
-        $this -> price = $price;
         $this -> quantity = $quantity;
     }
 

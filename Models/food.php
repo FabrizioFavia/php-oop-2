@@ -5,9 +5,9 @@ public $category = null;
 public $image = null;
 
 
-public function __construct($name, $price, $quantity, $category, $image)
+public function __construct($name, $quantity, $category, $image)
 {
-    parent::__construct($name, $price, $quantity);
+    parent::__construct($name, $quantity);
 
     $this->category = $category;
     $this->image = $image;

@@ -71,7 +71,7 @@ require_once "./Traits/typeOf.php"
                 </div>
                 <h4><?php echo $product->name ?></h4>
                 <div class="d-flex justify-content-between pt-2">
-                    <p><strong>Prezzo: <?php echo $product->price ?> € </strong></p>
+                    <p><strong>Prezzo: <?php echo $product->getPrice() ?></strong></p>
                     <p><strong>Peso: <?php echo $product->getWeight() ?></strong></p>
                 </div>
             </div>
@@ -95,7 +95,7 @@ require_once "./Traits/typeOf.php"
                 </div>
                 <h4><?php echo $product->name ?></h4>
                 <div class="d-flex justify-content-between">
-                    <p><strong>Prezzo: <?php echo $product->price ?> € </strong></p>
+                    <p><strong>Prezzo: <?php echo $product->getPrice() ?></strong></p>
                     <p><strong>Peso: <?php echo $product->getWeight() ?></strong></p>
                 </div>
             </div>
@@ -118,7 +118,7 @@ require_once "./Traits/typeOf.php"
                 </div>
                 <h4><?php echo $product->name ?></h4>
                 <div class="d-flex justify-content-between">
-                    <p><strong>Prezzo: <?php echo $product->price ?> € </strong></p>
+                    <p><strong>Prezzo: <?php echo $product->getPrice() ?></strong></p>
                     <p><strong>Peso: <?php echo $product->getWeight() ?></strong></p>
                 </div>
             </div>
@@ -140,7 +140,7 @@ require_once "./Traits/typeOf.php"
                     <div class="d-flex flex-column">
                         <h5 class="ms-3"><?php echo $product->name ?></h5>
                         <div class="pb-2">
-                            <p class="ms-3"><strong>Prezzo: <?php echo $product->price ?> € </strong></p>
+                            <p class="ms-3"><strong>Prezzo: <?php echo $product->getPrice() ?></strong></p>
                         </div>
                     </div>
                 </div>
