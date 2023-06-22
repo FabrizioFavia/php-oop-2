@@ -6,7 +6,6 @@ require_once "./allProduct.php";
 require_once "./Traits/weightable.php";
 require_once "./Traits/typeOf.php"
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,7 +70,13 @@ require_once "./Traits/typeOf.php"
                 </div>
                 <h4><?php echo $product->name ?></h4>
                 <div class="d-flex justify-content-between pt-2">
-                    <p><strong>Prezzo: <?php echo $product->getPrice() ?></strong></p>
+                    <p><strong>Prezzo: <?php
+                                        try {
+                                            echo $product->getPrice();
+                                        } catch (Exception $e) {
+                                            "prezzo non disponibile";
+                                        }
+                                        ?></strong></p>
                     <p><strong>Peso: <?php echo $product->getWeight() ?></strong></p>
                 </div>
             </div>

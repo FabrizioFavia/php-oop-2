@@ -9,7 +9,7 @@ class Product{
     use TypeOf;
 
     public $name;
-    private $price;
+    public $price;
     public $quantity;
 
     public function __construct($name, $quantity)
@@ -19,7 +19,7 @@ class Product{
     }
 
     public function setPrice($price){
-        if ($price>=0) {
+        if ($price>0) {
             $this->price = $price;
         }
     }

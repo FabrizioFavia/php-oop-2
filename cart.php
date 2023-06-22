@@ -1,7 +1,9 @@
  <?php
 
+ require_once "./Models/product.php";
  require_once "./Models/toy.php";
  require_once "./allProduct.php";
+
 
 class Cart
 {

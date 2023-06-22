@@ -30,7 +30,7 @@ $dogFood[0]->setPrice(20);
 
 $dogFood[1]->setWeight(10);
 $dogFood[1]->setType("pesce");
-$dogFood[1]->setPrice(0);
+$dogFood[1]->setPrice(10);
 
 $dogFood[2]->setWeight(500, "g");
 $dogFood[2]->setType("carne");
