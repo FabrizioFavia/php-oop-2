@@ -139,7 +139,6 @@ require_once "./allProduct.php";
                         <div class="pb-2">
                             <p class="ms-3"><strong>Prezzo: <?php echo $product->price ?> € </strong></p>
                         </div>
-                <p><strong>Categoria: <?php echo $product->category ?></strong></p>
 
                     </div>
 
