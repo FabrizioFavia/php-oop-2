@@ -66,8 +66,9 @@ require_once "./allProduct.php";
                 <h4><?php echo $product->name ?></h4>
                 <div class="d-flex justify-content-between pt-2">
                     <p><strong>Prezzo: <?php echo $product->price ?> € </strong></p>
-                    <p><strong>Peso: <?php echo $product->weight ?> KG </strong></p>
+                    <p><strong>Peso: <?php echo $product->weight ?></strong></p>
                 </div>
+                <p><strong>Categoria: <?php echo $product->category ?></strong></p>
             </div>
         <?php } ?>
     </div>
@@ -86,8 +87,9 @@ require_once "./allProduct.php";
                 <h4><?php echo $product->name ?></h4>
                 <div class="d-flex justify-content-between">
                     <p><strong>Prezzo: <?php echo $product->price ?> € </strong></p>
-                    <p><strong>Peso: <?php echo $product->weight ?> KG </strong></p>
+                    <p><strong>Peso: <?php echo $product->weight ?></strong></p>
                 </div>
+                <p><strong>Categoria: <?php echo $product->category ?></strong></p>
             </div>
         <?php } ?>
     </div>
@@ -108,6 +110,8 @@ require_once "./allProduct.php";
                 <div class="pb-2">
                     <p><strong>Prezzo: <?php echo $product->price ?> € </strong></p>
                 </div>
+                <p><strong>Categoria: <?php echo $product->category ?></strong></p>
+
             </div>
         <?php } ?>
     </div>
@@ -126,7 +130,7 @@ require_once "./allProduct.php";
         <div class="offcanvas-body">
             <?php
             foreach ($userCart->items as $product) { ?>
-                <div class="cartProduct mb-4 d-flex">
+                <div class="cartProduct mb-4 p-2 d-flex">
                     <div class="cartImgContainer mb-3">
                         <img class="productImage" src=<?php echo $product->image ?> alt="">
                     </div>
@@ -135,6 +139,8 @@ require_once "./allProduct.php";
                         <div class="pb-2">
                             <p class="ms-3"><strong>Prezzo: <?php echo $product->price ?> € </strong></p>
                         </div>
+                <p><strong>Categoria: <?php echo $product->category ?></strong></p>
+
                     </div>
 
 
@@ -143,7 +149,7 @@ require_once "./allProduct.php";
 
             ?>
             <h4 class="mb-3">Totale: <?php echo $userCart->total ?> €</h4>
-            <button onclick="purchase()" class="btn btn-success">Effettua pagamento</button>
+            <button onclick="purchase()" class="btn btn-success">Acquista</button>
         </div>
     </div>
 </body>

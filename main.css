@@ -6,8 +6,8 @@
 }
 
 .productCard{
-    width: 300px;
-    min-height: 300px;
+    width: 350px;
+    height: 600px;
     cursor: pointer;
 }
 .productCard:hover{
@@ -16,7 +16,7 @@
 
 .toyCard{
     width: 300px;
-    height: 370px;
+    height: 600px;
     cursor: pointer;
 }
 .toyCard:hover{
